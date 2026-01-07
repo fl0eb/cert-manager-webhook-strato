@@ -22,7 +22,9 @@ Follow these steps to quickly set up and use the STRATO cert-manager webhook:
 3. It is recommended to keep a backup of your DNS configuration as a precaution.
 4. Note: Two-factor authentication is not supported for this integration.
    If this is a feature you would like to see, please open a issue
-5. `kubectl` or `helm` installed and configured to access your cluster.
+5. Note: STRATO may require CAPTCHAs for certain clients, which can result in failed authentications.
+   This is a limitation of STRATO's authentication system beyond the scope of this webhook implementation.
+6. `kubectl` or `helm` installed and configured to access your cluster.
 
 ### Installation
 

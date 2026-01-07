@@ -5,7 +5,7 @@
 
 # Strato ACME webhook
 
-This inofficial repository contains a cert-manager webhook implementation for the DNS provider STRATO. It enables cert-manager to solve DNS01 ACME challenges using STRATO's DNS services. By integrating with STRATO's API, this webhook allows users to automate the issuance and renewal of TLS certificates for domains managed by STRATO.
+This inofficial repository contains a cert-manager webhook implementation for the DNS provider STRATO. It enables cert-manager to solve DNS01 ACME challenges by managing DNS records for domains hosted by STRATO. Since STRATO does not provide a formal API, this webhook implements integration through interaction with STRATO's web interface.
 
 The webhook is designed to be deployed as a Kubernetes API service, ensuring secure and restricted access through Kubernetes RBAC. It adheres to cert-manager's webhook interface, making it easy to integrate with existing cert-manager installations.
 
@@ -22,8 +22,7 @@ Follow these steps to quickly set up and use the STRATO cert-manager webhook:
 3. It is recommended to keep a backup of your DNS configuration as a precaution.
 4. Note: Two-factor authentication is not supported for this integration.
    If this is a feature you would like to see, please open a issue
-5. Note: STRATO may require CAPTCHAs for certain clients, which can result in failed authentications.
-   This is a limitation of STRATO's authentication system beyond the scope of this webhook implementation.
+5. Note: STRATO may require CAPTCHAs for certain clients. Due to the nature of this integration approach, authentication failures may occasionally occur during certificate operations.
 6. `kubectl` or `helm` installed and configured to access your cluster.
 
 ### Installation
